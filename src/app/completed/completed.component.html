@@ -1,0 +1,14 @@
+<div>
+  <ng-container  *ngIf="tasks; else elseTemplate">
+    <div *ngIf="tasks.length > 0; else elseNoTask">
+      <div *ngFor="let task of tasks; let i = index">
+        <div>- {{ task.title }}</div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <p>Non hai svolto alcun compito....</p>
+  </ng-template>
+</div>
+
+<ng-template #elseNoTask> <p>Non hai svolto alcun compito....</p> </ng-template>
